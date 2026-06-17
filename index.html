@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raj Kedia | Software Development Engineer</title>
+    <meta name="description" content="Portfolio of Raj Kedia — Software Development Engineer (R&D) specializing in full-stack development, Android, Python, and embedded systems.">
+    <meta name="keywords" content="Raj Kedia, Software Engineer, Full Stack Developer, Python, Kotlin, Android, Django, Portfolio">
+    <meta name="author" content="Raj Kedia">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Cursor glow effect -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Animated background particles -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>RK<span class="logo-bracket">/&gt;</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#achievements" class="nav-link">Achievements</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-greeting">
+                    <span class="greeting-line"></span>
+                    <span class="greeting-text">Hello, I'm</span>
+                </div>
+                <h1 class="hero-name">
+                    <span class="name-line" data-text="Raj">Raj</span>
+                    <span class="name-line accent" data-text="Kedia">Kedia</span>
+                </h1>
+                <div class="hero-title-wrapper">
+                    <span class="hero-title-prefix">I build</span>
+                    <div class="typewriter-container">
+                        <span class="typewriter" id="typewriter"></span>
+                        <span class="typewriter-cursor">|</span>
+                    </div>
+                </div>
+                <p class="hero-description">
+                    Software Development Engineer (R&D) at Nibrus Technology, specializing in 
+                    full-stack development across <strong>Android</strong>, <strong>Embedded Systems</strong>, 
+                    and <strong>Cloud Services</strong>. NIT Meghalaya graduate with a passion for 
+                    competitive programming and building impactful products.
+                </p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">
+                        <span>View My Work</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                        </svg>
+                    </a>
+                    <a href="#contact" class="btn btn-outline">
+                        <span>Get In Touch</span>
+                    </a>
+                </div>
+                <div class="hero-socials">
+                    <a href="https://github.com/rajkedia10" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                    <a href="https://linkedin.com/in/rajkedia10" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                    <a href="https://leetcode.com/rajkedia10" target="_blank" rel="noopener" class="social-link" aria-label="LeetCode">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg>
+                    </a>
+                    <a href="https://codeforces.com/profile/rajkedia10" target="_blank" rel="noopener" class="social-link" aria-label="Codeforces">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M4.5 7.5C5.328 7.5 6 8.172 6 9v10.5c0 .828-.672 1.5-1.5 1.5h-3C.672 21 0 20.328 0 19.5V9c0-.828.672-1.5 1.5-1.5h3zm9-4.5c.828 0 1.5.672 1.5 1.5v15c0 .828-.672 1.5-1.5 1.5h-3c-.828 0-1.5-.672-1.5-1.5v-15c0-.828.672-1.5 1.5-1.5h3zm9 7.5c.828 0 1.5.672 1.5 1.5v7.5c0 .828-.672 1.5-1.5 1.5h-3c-.828 0-1.5-.672-1.5-1.5V12c0-.828.672-1.5 1.5-1.5h3z"/></svg>
+                    </a>
+                    <a href="https://www.codechef.com/users/rajkedia10" target="_blank" rel="noopener" class="social-link" aria-label="CodeChef">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M11.257.004c-.349.039-.688.122-.898.27L9.07 1.295c-.295.187-.616.509-.831.832-.364.545-.533.98-.678 1.74-.074.392-.088.547-.088 1.04 0 .485.014.656.086 1.024.194 1.002.567 1.71 1.277 2.428.182.182.332.338.332.347 0 .01-.234.177-.52.37-1.146.78-1.988 1.863-2.397 3.082-.164.494-.233.876-.27 1.505-.06 1.056.18 2.063.71 2.982a6.66 6.66 0 001.068 1.328c.47.436.966.768 1.574 1.054.347.164.376.185.376.263 0 .05-.035.252-.076.452-.094.446-.094.842 0 1.166.12.418.395.806.724 1.022.088.06.162.114.162.126 0 .01-.045.076-.101.148-.273.355-.436.86-.436 1.35 0 .194.017.305.064.455.12.39.385.67.79.846l.176.078H12l.176-.078c.405-.177.67-.456.79-.846.047-.15.064-.26.064-.455 0-.49-.163-.995-.436-1.35-.056-.072-.101-.138-.101-.148 0-.012.073-.066.162-.126.329-.216.604-.604.724-1.022.094-.324.094-.72 0-1.166-.041-.2-.076-.401-.076-.452 0-.078.029-.099.376-.263a5.882 5.882 0 001.574-1.054c.458-.43.821-.88 1.068-1.328.53-.919.77-1.926.71-2.982-.037-.629-.106-1.011-.27-1.505-.409-1.219-1.251-2.302-2.397-3.082-.286-.193-.52-.36-.52-.37 0-.01.15-.165.332-.347.71-.717 1.083-1.426 1.277-2.428.072-.368.086-.54.086-1.024 0-.493-.014-.648-.088-1.04-.145-.76-.314-1.195-.678-1.74a3.636 3.636 0 00-.831-.832L13.641.274c-.294-.206-.896-.323-1.384-.27z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-image-wrapper">
+                    <div class="hero-image-ring"></div>
+                    <div class="hero-image-ring ring-2"></div>
+                    <div class="hero-image">
+                        <img src="avatar.png" alt="Raj Kedia" />
+                    </div>
+                </div>
+                <div class="floating-badge badge-1">
+                    <span class="badge-icon">🚀</span>
+                    <span class="badge-text">SDE R&D</span>
+                </div>
+                <div class="floating-badge badge-2">
+                    <span class="badge-icon">⭐</span>
+                    <span class="badge-text">4★ CodeChef</span>
+                </div>
+                <div class="floating-badge badge-3">
+                    <span class="badge-icon">🏆</span>
+                    <span class="badge-text">ICPC Regionalist</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-dot"></div>
+            </div>
+            <span>Scroll Down</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">01. About Me</span>
+                <h2 class="section-title">Who I Am</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>
+                        I'm a <strong>Software Development Engineer (R&D)</strong> at Nibrus Technology, where I spearhead 
+                        full-stack development as the sole engineer across a mission-critical 3-layer architecture 
+                        spanning <em>Kotlin Android</em>, <em>C++ Raspberry Pi</em>, and <em>Python Server</em> systems.
+                    </p>
+                    <p>
+                        I graduated from <strong>NIT Meghalaya</strong> with a B.Tech in Electronics & Communication 
+                        (CGPA: 7.96). As the Convener of NIT Meghalaya's Coding Club, I managed 50+ events annually 
+                        and led a team of 20+ members.
+                    </p>
+                    <p>
+                        When I'm not building production systems, you'll find me solving competitive programming 
+                        problems — I'm a <strong>4-star rated coder on CodeChef</strong> and an 
+                        <strong>ACM ICPC Regionalist</strong>.
+                    </p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <span class="stat-number" data-target="10">0</span><span class="stat-suffix">+</span>
+                        <span class="stat-label">Core Features Deployed</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" data-target="100">0</span><span class="stat-suffix">+</span>
+                        <span class="stat-label">Field Devices Managed</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" data-target="99">0</span><span class="stat-suffix">.9%</span>
+                        <span class="stat-label">Sync Reliability</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" data-target="30">0</span><span class="stat-suffix">%</span>
+                        <span class="stat-label">Performance Boost</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section section-alt" id="experience">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">02. Experience</span>
+                <h2 class="section-title">Where I've Worked</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-role">Software Development Engineer (R&D)</h3>
+                                <span class="timeline-company">Nibrus Technology Pvt. Ltd.</span>
+                            </div>
+                            <span class="timeline-date">July 2025 – Present</span>
+                        </div>
+                        <ul class="timeline-details">
+                            <li>Spearheaded full-stack development as the <strong>sole engineer</strong>, managing the complete SDLC for a mission-critical 3-layer architecture (Kotlin Android, C++ Raspberry Pi, and Python Server).</li>
+                            <li>Architected and deployed <strong>10+ core features</strong> independently, enhancing the application's utility and expanding technical capabilities for a fleet of <strong>100+ field devices</strong>.</li>
+                            <li>Optimized system performance — <strong>30% improvement</strong> in data processing speed and seamless UX in high-stakes environments.</li>
+                            <li>Engineered robust device-to-server communication protocols with <strong>99.9% data synchronization reliability</strong>.</li>
+                            <li>Drove product strategy through market research and technical feasibility studies, implementing <strong>5+ high-impact architectural changes</strong>.</li>
+                            <li>Led the integration of <strong>offline-first logic</strong>, enabling uninterrupted surveying for 50+ enterprise customers in low-connectivity field conditions.</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span class="tag">Kotlin</span>
+                            <span class="tag">C++</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Android</span>
+                            <span class="tag">Raspberry Pi</span>
+                            <span class="tag">REST APIs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="section" id="education">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">03. Education</span>
+                <h2 class="section-title">Academic Background</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="education-card">
+                <div class="edu-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                        <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                    </svg>
+                </div>
+                <div class="edu-details">
+                    <h3>National Institute of Technology Meghalaya</h3>
+                    <p class="edu-degree">Bachelor of Technology — Electronics and Communication</p>
+                    <div class="edu-meta">
+                        <span class="edu-year">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            2021 – 2025
+                        </span>
+                        <span class="edu-location">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            Shillong, Meghalaya
+                        </span>
+                        <span class="edu-gpa">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            CGPA: 7.96
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section section-alt" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">04. Projects</span>
+                <h2 class="section-title">Things I've Built</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card featured">
+                    <div class="project-image">
+                        <div class="project-image-placeholder chess-bg">
+                            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5">
+                                <path d="M9 2h6v3h-2v2h4a2 2 0 012 2v3H5V9a2 2 0 012-2h4V5H9V2z"/>
+                                <path d="M5 14h14l-1 8H6l-1-8z"/>
+                            </svg>
+                            <div class="chess-pattern"></div>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="https://github.com/rajkedia10" target="_blank" rel="noopener" class="project-link-icon" aria-label="View code">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-label">Featured Project</span>
+                        <h3 class="project-title">Check — Chess Game Reviewer</h3>
+                        <p class="project-description">
+                            A comprehensive Chess Game Reviewer website with 3+ methods to fetch and review games. 
+                            Integrated with the <strong>Stockfish engine</strong> to analyze 500+ moves, providing move 
+                            classification and optimal move suggestions. Features cursor-based pagination, floating alerts, 
+                            modals, and rich move history display.
+                        </p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>Django</span>
+                            <span>JavaScript</span>
+                            <span>Stockfish</span>
+                            <span>HTML/CSS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card featured">
+                    <div class="project-image">
+                        <div class="project-image-placeholder blog-bg">
+                            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5">
+                                <path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
+                            </svg>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="https://github.com/rajkedia10" target="_blank" rel="noopener" class="project-link-icon" aria-label="View code">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+                            </a>
+                            <a href="#" target="_blank" rel="noopener" class="project-link-icon" aria-label="View live">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-label">Featured Project</span>
+                        <h3 class="project-title">Blogverse</h3>
+                        <p class="project-description">
+                            A scalable blog management platform built with Django, featuring efficient content publishing 
+                            and user engagement. Includes a robust user authentication system with SQLite, responsive UI, 
+                            and optimized user experience across all devices.
+                        </p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>Django</span>
+                            <span>SQLite</span>
+                            <span>HTML/CSS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">05. Skills</span>
+                <h2 class="section-title">What I Use</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-category-header">
+                        <div class="skill-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                        </div>
+                        <h3>Languages</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item"><span class="skill-dot"></span>Python</div>
+                        <div class="skill-item"><span class="skill-dot"></span>C++</div>
+                        <div class="skill-item"><span class="skill-dot"></span>Kotlin</div>
+                        <div class="skill-item"><span class="skill-dot"></span>SQL</div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-header">
+                        <div class="skill-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                        </div>
+                        <h3>Frameworks & Web</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item"><span class="skill-dot"></span>Django</div>
+                        <div class="skill-item"><span class="skill-dot"></span>REST APIs</div>
+                        <div class="skill-item"><span class="skill-dot"></span>Android Dev</div>
+                        <div class="skill-item"><span class="skill-dot"></span>SQLite</div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-header">
+                        <div class="skill-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+                        </div>
+                        <h3>Core Concepts</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item"><span class="skill-dot"></span>DSA</div>
+                        <div class="skill-item"><span class="skill-dot"></span>OOP</div>
+                        <div class="skill-item"><span class="skill-dot"></span>DBMS</div>
+                        <div class="skill-item"><span class="skill-dot"></span>Networks</div>
+                        <div class="skill-item"><span class="skill-dot"></span>ML / AI</div>
+                        <div class="skill-item"><span class="skill-dot"></span>Agentic AI</div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-header">
+                        <div class="skill-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+                        </div>
+                        <h3>Tools & Platforms</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item"><span class="skill-dot"></span>Git & GitHub</div>
+                        <div class="skill-item"><span class="skill-dot"></span>Raspberry Pi</div>
+                        <div class="skill-item"><span class="skill-dot"></span>Linux</div>
+                        <div class="skill-item"><span class="skill-dot"></span>Stockfish</div>
+                        <div class="skill-item"><span class="skill-dot"></span>GNSS/DGPS</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="section section-alt" id="achievements">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">06. Achievements</span>
+                <h2 class="section-title">Milestones</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-icon">🛡️</div>
+                    <h3>PicoCTF 2024</h3>
+                    <p>Global Rank <strong>1145 / 6957</strong> teams — solving cybersecurity challenges in cryptography, reverse engineering, and exploitation.</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">🏅</div>
+                    <h3>ACM ICPC 2024</h3>
+                    <p>Earned <strong>Regionalist</strong> status — competing among 200+ teams and qualifying for regional rounds.</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">⭐</div>
+                    <h3>CodeChef 4-Star</h3>
+                    <p>Achieved <strong>4-star rating (Max 1802)</strong> through participation in 30+ competitive programming contests.</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">🎯</div>
+                    <h3>Coding Club Convener</h3>
+                    <p>Managed <strong>50+ coding events</strong> annually, supervised 20+ members, and handled a 2 lakh+ budget at NIT Meghalaya.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">07. Contact</span>
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="contact-content">
+                <p class="contact-text">
+                    I'm currently open to new opportunities and collaborations. Whether you have a question, 
+                    a project idea, or just want to say hi — my inbox is always open!
+                </p>
+                <div class="contact-cards">
+                    <a href="mailto:rajramkola786@gmail.com" class="contact-card">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <span class="contact-card-label">Email</span>
+                        <span class="contact-card-value">rajramkola786@gmail.com</span>
+                    </a>
+                    <a href="tel:+918858580090" class="contact-card">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                        <span class="contact-card-label">Phone</span>
+                        <span class="contact-card-value">+91 8858580090</span>
+                    </a>
+                    <a href="https://linkedin.com/in/rajkedia10" target="_blank" rel="noopener" class="contact-card">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        <span class="contact-card-label">LinkedIn</span>
+                        <span class="contact-card-value">Connect with me</span>
+                    </a>
+                </div>
+                <a href="mailto:rajramkola786@gmail.com" class="btn btn-primary btn-lg">
+                    <span>Say Hello 👋</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">
+                Designed & Built by <strong>Raj Kedia</strong>
+            </p>
+            <p class="footer-sub">© 2025 — All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+        <span class="btt-label">Top</span>
+    </button>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress-track" id="scrollProgressTrack">
+        <div class="scroll-progress-thumb" id="scrollProgressThumb"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
